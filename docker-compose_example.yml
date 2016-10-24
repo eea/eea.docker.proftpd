@@ -1,0 +1,17 @@
+proftpd:
+  build: proftpd
+  restart: always
+  ports:
+     - changeme:20
+     - changeme:21
+  labels:
+    io.rancher.scheduler.affinity:host_label: changeme
+
+  environment:
+    SERVERNAME: "changeme"
+    DEFAULTROOT: "changeme"
+    LDAPSERVER: "changeme"
+    TLSCACERTIFICATEPATH: "changeme" 
+    RSACERTIFICATEFILE: "changeme"
+    TLSCACERTIFICATEKEYFILE: "changeme"
+
