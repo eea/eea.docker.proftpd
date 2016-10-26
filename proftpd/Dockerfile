@@ -12,7 +12,6 @@ COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-EXPOSE 21
-EXPOSE 20
+EXPOSE 20 21
 
 CMD ["proftpd", "--nodaemon", "-c", "/etc/proftpd/proftpd.conf"]
