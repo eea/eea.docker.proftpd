@@ -16,4 +16,4 @@ RUN chmod a+x /entrypoint.sh /create_ssl_files.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-EXPOSE 20 21 999 1026 1027 1028 1029 1030 
+EXPOSE 20 21 999 990 1026 1027 1028 1029 1030 
