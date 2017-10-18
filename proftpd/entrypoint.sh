@@ -1,7 +1,24 @@
 #!/bin/bash
 set -e
 
-sh /create_ssl_files.sh
+update_proftpd_setting() {
+  conffile="$1"
+  setting="$2"
+  value="$3"
+  sed -i -e 's#^[ \t]*'"$setting"'[ \t].*$#'"$setting $value"'#' "$conffile"
+}
+
+[ -n "$PASSIVE_PORTS" ] && \
+  update_proftpd_setting /etc/proftpd/proftpd.conf \
+  PassivePorts "${PASSIVE_PORTS//-/ }"
+
+#sh /create_ssl_files.sh
+mkdir -p /var/ssl
+cp /ssl/* /var/ssl
+
+chmod -R 755 $TLSCACERTIFICATEPATH
+chmod -R 644 $TLSCACERTIFICATEPATH/*
+chown -R root.root $TLSCACERTIFICATEPATH
 
 echo "$USERS" > /etc/proftpd/users
 chmod o-rwx /etc/proftpd/users
