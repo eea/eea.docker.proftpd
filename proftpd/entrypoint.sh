@@ -12,7 +12,6 @@ update_proftpd_setting() {
   update_proftpd_setting /etc/proftpd/proftpd.conf \
   PassivePorts "${PASSIVE_PORTS//-/ }"
 
-#sh /create_ssl_files.sh
 mkdir -p /var/ssl
 cp /ssl/* /var/ssl
 
