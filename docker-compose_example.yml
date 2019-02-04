@@ -26,7 +26,7 @@ image: eeacms/proftpd:latest
     LDAPGENERATEHOMEDIRPREFIX: 'changeme'
     LDAPSERVER: 'changeme'
 
-    SDIACCESSRIGHTS: |-
+    ACCESSRIGHTS: |-
        AuthUserFile /etc/proftpd/users
        <Directory changeme_basedir>
        <Limit WRITE>
