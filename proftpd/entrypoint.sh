@@ -19,6 +19,8 @@ chmod -R 755 $TLSCACERTIFICATEPATH
 chmod -R 644 $TLSCACERTIFICATEPATH/*
 chown -R root.root $TLSCACERTIFICATEPATH
 
+echo "$SDIACCESSRIGHTS" > /etc/proftpd/conf.d/sdi_access_rights.conf
+
 echo "$USERS" > /etc/proftpd/users
 chmod o-rwx /etc/proftpd/users
 

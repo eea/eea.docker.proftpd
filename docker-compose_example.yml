@@ -1,5 +1,5 @@
 
-mage: eeacms/proftpd:latest
+image: eeacms/proftpd:latest
   build: proftpd
   restart: always
   ports:
@@ -25,6 +25,20 @@ mage: eeacms/proftpd:latest
     TLSCACERTIFICATEPATH: 'changeme'
     LDAPGENERATEHOMEDIRPREFIX: 'changeme'
     LDAPSERVER: 'changeme'
+
+    SDIACCESSRIGHTS: |-
+       AuthUserFile /etc/proftpd/users
+       <Directory changeme_basedir>
+       <Limit WRITE>
+         DenyAll
+       </Limit>
+       <Limit DIRS READ>
+       AllowGroup OR changeme_group, changeme_group
+       #AllowUser add_custom_user, custom_user2
+       #   DenyAll
+       #    </Limit>
+       #    </Directory>
+
 
     USERS: |
        user1:password1:65534:65534::/var/run/proftpd:/bin/false
