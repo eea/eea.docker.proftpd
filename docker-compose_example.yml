@@ -34,10 +34,10 @@ image: eeacms/proftpd:latest
        </Limit>
        <Limit DIRS READ>
        AllowGroup OR changeme_group, changeme_group
-       #AllowUser add_custom_user, custom_user2
-       #   DenyAll
-       #    </Limit>
-       #    </Directory>
+       AllowUser add_custom_user, custom_user2
+       DenyAll
+       </Limit>
+       </Directory>
 
 
     USERS: |
