@@ -10,9 +10,6 @@ RUN rm /etc/proftpd/ldap.conf
 COPY ssl.conf /etc/proftpd/conf.d/ssl.conf
 COPY ldap.conf /etc/proftpd/conf.d/ldap.conf
 
-COPY gioland_access_rights.conf /etc/proftpd/conf.d/gioland_access_rights.conf
-#COPY sdi_access_rights.conf /etc/proftpd/conf.d/sdi_access_rights.conf
-
 RUN echo "LoadModule mod_ldap.c" >> /etc/proftpd/modules.conf
 RUN echo "TLS_REQCERT allow" > /etc/ldap/ldap.conf
 
