@@ -1,9 +1,12 @@
-FROM ubuntu:18.04
+#FROM ubuntu:18.04
+FROM debian:stretch
 
 MAINTAINER michimau <mauro.michielon@eea.europa.eu>
 
 RUN apt-get update -y 
-RUN apt-get install -y proftpd proftpd-mod-ldap vim
+RUN apt-get install -y proftpd \
+                       proftpd-mod-ldap \
+                       vim
 
 COPY proftpd.conf /etc/proftpd/proftpd.conf
 RUN rm /etc/proftpd/ldap.conf
