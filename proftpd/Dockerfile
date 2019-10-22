@@ -1,4 +1,3 @@
-#FROM ubuntu:18.04
 FROM debian:stretch
 
 MAINTAINER michimau <mauro.michielon@eea.europa.eu>

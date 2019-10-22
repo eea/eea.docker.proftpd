@@ -13,7 +13,8 @@ update_proftpd_setting() {
   PassivePorts "${PASSIVE_PORTS//-/ }"
 
 mkdir -p /var/ssl
-cp /ssl/* /var/ssl
+cp /ssl/*.key /var/ssl
+cp /ssl/*.crt /var/ssl
 
 chmod -R 755 $TLSCACERTIFICATEPATH
 chmod -R 644 $TLSCACERTIFICATEPATH/*
